@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 // Email routes
-app.use("/api/email", emailRoutes); // 👈 enable email route
+app.use("/api", emailRoutes); // 👈 enable email route
 
 app.listen(port, () => {
   console.log(` Server listening at http://localhost:${port}`);
