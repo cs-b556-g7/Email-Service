@@ -5,17 +5,15 @@ import emailRoutes from "./routes/emailRoutes.js";
 dotenv.config({ path: "./.env" });
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3002;
 
 app.use(express.json());
 
-// Test route
 app.get("/", (req, res) => {
   res.send("Email Service");
 });
 
-// Email routes
-app.use("/api/email", emailRoutes); // 👈 enable email route
+app.use("/api", emailRoutes);
 
 app.listen(port, () => {
   console.log(` Server listening at http://localhost:${port}`);
